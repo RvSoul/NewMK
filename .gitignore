@@ -1,0 +1,14 @@
+Utility/bin/
+Utility/obj/
+Site.NewBwsl.WebApi/obj/
+packages/
+NewBwsl.DTO/bin/
+NewBwsl.DTO/obj/
+NewBwsl.Domian/obj/
+NewBwsl.Domian/bin/
+NewBwsl.CM/bin/
+NewBwsl.CM/obj/
+Manage.NewBwsl.WebApi/obj/
+BackTask.NewBwsl.Service/obj/
+BackTask.NewBwsl.Service/bin/
+Accounting.NewBwsl.WebApi/obj/

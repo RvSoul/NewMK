@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B721FB24-7116-4F29-9629-ACACD1FF9527}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewMK.Domian</RootNamespace>
+    <AssemblyName>NewMK.Domian</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LitJSON, Version=0.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LitJson.0.12.0\lib\net45\LitJSON.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.6.2.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.6.2\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="ZKWeb.System.Drawing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZKWeb.System.Drawing.4.0.1\lib\net45\ZKWeb.System.Drawing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CacheKey.cs" />
+    <Compile Include="Common\WXCacheUtil.cs" />
+    <Compile Include="Common\UserCaheUtil.cs" />
+    <Compile Include="DM\ActivityDM.cs" />
+    <Compile Include="DM\AdminUserDM.cs" />
+    <Compile Include="DM\BonusDM.cs" />
+    <Compile Include="DM\ManageDataDM.cs" />
+    <Compile Include="DM\NoticeDM.cs" />
+    <Compile Include="DM\OrderDM.cs" />
+    <Compile Include="DM\ProductDM.cs" />
+    <Compile Include="DM\RecordDM.cs" />
+    <Compile Include="DM\ShoppingCartDM.cs" />
+    <Compile Include="DM\UserDM.cs" />
+    <Compile Include="DomainException\OrderNoNeedPayException.cs" />
+    <Compile Include="DomainException\DMException.cs" />
+    <Compile Include="DomainException\UnAuthorizeException.cs" />
+    <Compile Include="Enum\SystemName.cs" />
+    <Compile Include="Enum\MenuType.cs" />
+    <Compile Include="Enum\DeLevel.cs" />
+    <Compile Include="Enum\DeliverType.cs" />
+    <Compile Include="Enum\SettleFlag.cs" />
+    <Compile Include="Enum\PayType.cs" />
+    <Compile Include="Enum\OrderType.cs" />
+    <Compile Include="Enum\OrderState.cs" />
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="Pay\BaseServers\PayBaseDTO.cs" />
+    <Compile Include="Pay\BaseServers\QrCodeImgServer.cs" />
+    <Compile Include="Pay\BaseServers\SomeHelpServer.cs" />
+    <Compile Include="Pay\BaseServers\XmlHttpServer.cs" />
+    <Compile Include="Pay\WeiXinPay\DownloadBill.cs" />
+    <Compile Include="Pay\WeiXinPay\JsApiPay.cs" />
+    <Compile Include="Pay\WeiXinPay\Refund.cs" />
+    <Compile Include="Pay\WeiXinPay\MicroPay.cs" />
+    <Compile Include="Pay\WeiXinPay\NativeNotify.cs" />
+    <Compile Include="Pay\WeiXinPay\NativePay.cs" />
+    <Compile Include="Pay\WxException\WxOrderNotPayException.cs" />
+    <Compile Include="Pay\WxException\WxOrderNotExistsException.cs" />
+    <Compile Include="Pay\WxException\WxOutTradeNoUsedException.cs" />
+    <Compile Include="Pay\WxException\WxOrderCloseException.cs" />
+    <Compile Include="Pay\WxException\WxOrderPaidException.cs" />
+    <Compile Include="Pay\99Bill\99BillPay.cs" />
+    <Compile Include="Pay\99Bill\99BillReceive.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\Config.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\Data.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\DemoConfig.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\Exception.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\HttpService.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\IConfig.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\Log.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\Notify.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\RandomGenerator.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\SafeXmlDocument.cs" />
+    <Compile Include="Pay\WeiXinPay\lib\WxPayApi.cs" />
+    <Compile Include="PredicateBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\BackTaskException.cs" />
+    <Compile Include="Task\BackTaskService.cs" />
+    <Compile Include="Task\BaseJob.cs" />
+    <Compile Include="Task\Job\OrderBalanceAccountJob.cs" />
+    <Compile Include="Task\Job\OrderRefundQueryJob.cs" />
+    <Compile Include="Task\Job\OrderPayQueryJob.cs" />
+    <Compile Include="TheThirdPartyBase\GetCROrderQueries.cs" />
+    <Compile Include="TheThirdPartyBase\GetMiddleDBQueries.cs" />
+    <Compile Include="TheThirdPartyBase\SqlHelper.cs" />
+    <Compile Include="ThirdParty\lingkaiDX\Reference.cs" />
+    <Compile Include="ThirdParty\SmsUtility.cs" />
+    <Compile Include="Weixin\AccessTokenUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NewBwsl.CM\NewMK.Model.csproj">
+      <Project>{050980c3-6ace-4a87-910c-e5327632d05b}</Project>
+      <Name>NewMK.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewBwsl.DTO\NewMK.DTO.csproj">
+      <Project>{4d00274f-02d6-4756-a3ce-19e7325fe345}</Project>
+      <Name>NewMK.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{6812d8af-85e2-4291-af53-52d1c450201e}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="ThirdParty\lingkaiDX\linkWS.wsdl" />
+    <None Include="ThirdParty\lingkaiDX\Reference.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ThirdParty\lingkaiDX\linkWS.disco" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

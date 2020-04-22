@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83a33c4c1dc34942907ed10032899034" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="BwslRetailModel.ActivePeriodRecord" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Activity" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityDiscountOneInfo" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityDiscountTwo" Width="1.5" PointX="5.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityGifts" Width="1.5" PointX="8.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityGiftsPurchased" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityOrderType" Width="1.5" PointX="8.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityProduct" Width="1.5" PointX="5.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityProductPurchased" Width="1.5" PointX="8.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityUser" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityUserType" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.AdminMenu" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.AdminRole" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.AdminUser" Width="1.5" PointX="8" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Areas" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Balance" Width="1.5" PointX="12.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.BrowseRecordsUrl" Width="1.5" PointX="8.25" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.DealerPlaceRelation" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.DeLevel" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.DiscountTwoInfo" Width="1.5" PointX="7.5" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ExceptionRecord" Width="1.5" PointX="12.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ExChange" Width="1.5" PointX="5.25" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.FreightRules" Width="1.5" PointX="13.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.GiftProduct" Width="1.5" PointX="5.25" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.HonLevel" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Messages" Width="1.5" PointX="10.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.MessageType" Width="1.5" PointX="8" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Order" Width="1.5" PointX="3" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.OrderConfig" Width="1.5" PointX="11.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.OrderProduct" Width="1.5" PointX="11.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.OrderType" Width="1.5" PointX="0.75" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Product" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ProductAttribute" Width="1.5" PointX="5.25" PointY="52.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ProductCollection" Width="1.5" PointX="11.25" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ProductComment" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ProductImage" Width="1.5" PointX="5.25" PointY="61.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ProductType" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.RecordPrizeInfo" Width="1.5" PointX="14.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.RoleMenu" Width="1.5" PointX="11" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ServerPrizeInfo" Width="1.5" PointX="14.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ServiceCenter" Width="1.5" PointX="0.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ShoppingCart" Width="1.5" PointX="5.25" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.TeachPrizeInfo" Width="1.5" PointX="10.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.TimesSpendPrizeInfo" Width="1.5" PointX="14.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.User" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.UserAddress" Width="1.5" PointX="5.25" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.UserCoupons" Width="1.5" PointX="5.25" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.UserPwdCode" Width="1.5" PointX="5.25" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.WeekPrize" Width="1.5" PointX="16.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.ZkJDPrizeInfo" Width="1.5" PointX="16.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BwslRetailModel.Dealer_Be_Balance_Bak" Width="1.5" PointX="13.75" PointY="18.25" IsExpanded="true" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVEPE_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ACTIVITY" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ActivityDiscountTwo" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ActivityGifts" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ActivityMaiGiftProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ACTIVITYOrderType" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ActivityUser" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_MaiGifts" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_UserType" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ActivityProductPurchased" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_DiscountTwo" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_DISCOUNT_REFERENCE_ACTIVITY" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_MaiGifts_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_ActivityGiftsPurchased" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_OrderID_ActivityGifts" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ORDERTYP" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_MaiGiftProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_OrderID_ActivityProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ROLEMENU_REFERENCE_ADMINMEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ADMINUSE_REFERENCE_ADMINROL" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ROLEMENU_REFERENCE_ADMINROL" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_MESSAGES_REFERENCE_ADMINUSE" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_BROWSERE_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_BROWSERE_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_USER_REFERENCE_DELEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_EXCHANGE_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_GIFTPROD_REFERENCE_GiftID" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_GIFTPROD_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_USER_REFERENCE_HONLEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_MESSAGES_REFERENCE_MESSAGET" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_MESSAGES_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDER_REFERENCE_ORDERTYP" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDER_REFERENCE_SERVICEC" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDER_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDERPRO_REFERENCE_ORDER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDERCON_REFERENCE_ORDERTYP" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDERCON_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_ORDERPRO_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCT_REFERENCE_PRODUCTT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTA_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTC_ProductComment" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTC_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTI_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_SHOPPING_REFERENCE_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTC_ProductCollection" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTC_Comment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_SERVICEC_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_SHOPPING_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_USERADDR_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_USERCOUP_REFERENCE_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BwslRetailModel.FK_USERPWD_REFERENCE_USER" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BwslRetailModel.ActivityGiftsPrice" Width="1.5" PointX="5.25" PointY="67.125" />
+        <EntityTypeShape EntityType="BwslRetailModel.AdminMenuAction" Width="1.5" PointX="11.125" PointY="2.25" />
+        <EntityTypeShape EntityType="BwslRetailModel.ProductStockHistory" Width="1.5" PointX="5.25" PointY="70.75" />
+        <EntityTypeShape EntityType="BwslRetailModel.RoleMenuAction" Width="1.5" PointX="13.25" PointY="0.75" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_ActivityGiftsPrice" />
+        <AssociationConnector Association="BwslRetailModel.FK_ACTIVITY_REFERENCE_GiftsPrice" />
+        <AssociationConnector Association="BwslRetailModel.FK_ADMINMEN_REFERENCE_MenuAction" />
+        <AssociationConnector Association="BwslRetailModel.FK_AdminMenu_REFERENCE_RoleMenuAction" />
+        <AssociationConnector Association="BwslRetailModel.FK_AdminMenuAction_REFERENCE_RoleMenuAction" />
+        <AssociationConnector Association="BwslRetailModel.FK_AdminRole_REFERENCE_RoleMenuAction" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTS_REFERENCE_StockHistory" />
+        <AssociationConnector Association="BwslRetailModel.FK_PRODUCTS_REFERENCE_StockHistory1" />
+        <EntityTypeShape EntityType="BwslRetailModel.AdminUserOperationLog" Width="1.5" PointX="10.25" PointY="32.75" />
+        <AssociationConnector Association="BwslRetailModel.FK_ADMINUSE_REFERENCE_ADMINUSE" />
+        <EntityTypeShape EntityType="BwslRetailModel.IndexImagesManage" Width="1.5" PointX="7.375" PointY="14.75" />
+        <EntityTypeShape EntityType="BwslRetailModel.ImgDeLevel" Width="1.5" PointX="13.625" PointY="23.75" />
+        <AssociationConnector Association="BwslRetailModel.FK_IMGDELEV_REFERENCE_DELEVEL" />
+        <AssociationConnector Association="BwslRetailModel.FK_IMGDELEV_REFERENCE_INDEXIMA" />
+        <EntityTypeShape EntityType="BwslRetailModel.Notice" Width="1.5" PointX="16.25" PointY="0.75" />
+        <EntityTypeShape EntityType="BwslRetailModel.NoticeType" Width="1.5" PointX="14" PointY="30.5" />
+        <AssociationConnector Association="BwslRetailModel.FK_NOTICE_REFERENCE_ADMINUSE" />
+        <AssociationConnector Association="BwslRetailModel.FK_NOTICE_REFERENCE_NOTICETY" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

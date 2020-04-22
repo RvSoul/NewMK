@@ -1,0 +1,1485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BwslRetailRelationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Balance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatePerson" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceType" Type="int" Nullable="false" />
+          <Property Name="IsWorking" Type="bit" Nullable="false" />
+          <Property Name="TopBalanceNumber" Type="nvarchar(max)" />
+          <Property Name="CountDate" Type="datetime" />
+          <Property Name="IsGrant" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.BalanceAllPlaceRelation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="BalanceAllPlaceRelation">
+          <Property Name="DealerId" Type="varchar" MaxLength="50" />
+          <Property Name="PDealerId" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.BalanceAllRecomRelation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="BalanceAllRecomRelation">
+          <Property Name="DealerId" Type="varchar" MaxLength="50" />
+          <Property Name="PDealerId" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.BalancePlaceRelation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="BalancePlaceRelation">
+          <Property Name="DealerId" Type="varchar" MaxLength="50" />
+          <Property Name="PDealerId" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.BalanceRecomRelation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="BalanceRecomRelation">
+          <Property Name="DealerId" Type="varchar" MaxLength="50" />
+          <Property Name="PDealerId" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.Cust_AstageCount_Balance”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="Cust_AstageCount_Balance">
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="UserCode" Type="varchar" MaxLength="20" />
+          <Property Name="Astage_Count" Type="int" />
+          <Property Name="BusiDate" Type="datetime" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.Dealer_Be_Balance_Bak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Dealer_Be_Balance_Bak">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="TPoint_Point" />
+            <PropertyRef Name="RPoint_Point" />
+            <PropertyRef Name="AStage_StageCount" />
+            <PropertyRef Name="State_LoginState" />
+            <PropertyRef Name="State_MoneyOPState" />
+            <PropertyRef Name="State_AccountState" />
+            <PropertyRef Name="EleMoney_Money" />
+            <PropertyRef Name="BonusMoney_Money" />
+            <PropertyRef Name="ReduceMoney_Money" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TPoint_Point" Type="int" Nullable="false" />
+          <Property Name="RPoint_Point" Type="int" Nullable="false" />
+          <Property Name="AStage_StageCount" Type="int" Nullable="false" />
+          <Property Name="State_LoginState" Type="bit" Nullable="false" />
+          <Property Name="State_MoneyOPState" Type="bit" Nullable="false" />
+          <Property Name="State_AccountState" Type="bit" Nullable="false" />
+          <Property Name="EleMoney_Money" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="BonusMoney_Money" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="HonLevelId" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeLevelId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReduceMoney_Money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BusiDate" Type="datetime" />
+          <Property Name="BalanceNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="DealerPlaceRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DealerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PDealerId" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+          <Property Name="BalanceLevel" Type="int" />
+        </EntityType>
+        <EntityType Name="DealerRecomRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DealerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PDealerId" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+          <Property Name="BalanceLevel" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.Grant_BusiData_ErrorResult”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Grant_BusiData_ErrorResult">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="BusiDate" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="BusiDate" Type="datetime" Nullable="false" />
+          <Property Name="ErrTag" Type="int" />
+          <Property Name="Discription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.Grant_BusiData_ErrRecord”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Grant_BusiData_ErrRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BusiDate" />
+            <PropertyRef Name="BusiType" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BusiDate" Type="datetime" Nullable="false" />
+          <Property Name="BusiType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Discription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.Hon_Dealer_Level_Update”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="Hon_Dealer_Level_Update">
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="HonLevelId" Type="int" />
+          <Property Name="DelevelId" Type="int" />
+          <Property Name="BusiType" Type="int" />
+          <Property Name="Decription" Type="varchar" MaxLength="20" />
+          <Property Name="IsGrant" Type="int" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.Hon_Dealer_Level_Update_Recorde”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="Hon_Dealer_Level_Update_Recorde">
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="HonLevelId" Type="int" />
+          <Property Name="DelevelId" Type="int" />
+          <Property Name="BusiType" Type="int" />
+          <Property Name="BalanceNumber" Type="int" />
+          <Property Name="Decription" Type="varchar" MaxLength="20" />
+          <Property Name="BusiDate" Type="datetime" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.Order_DeleteRecord”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="Order_DeleteRecord">
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="DealerId" Type="varchar" MaxLength="50" />
+          <Property Name="OrderTypeID" Type="int" />
+          <Property Name="OrderNumber" Type="varchar" MaxLength="50" />
+          <Property Name="MoneyProduct" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MoneyTransport" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="OrderMoney" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="OtherPayMoney" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="UserPayMoney" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TotalPv" Type="int" />
+          <Property Name="BusiDate" Type="datetime" />
+          <Property Name="ConsigneePhone" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="State" Type="int" />
+          <Property Name="Id" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="PlaceRelation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Layer" Type="int" />
+          <Property Name="DealerId" Type="uniqueidentifier" />
+          <Property Name="PDealerId" Type="uniqueidentifier" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="RecomRelation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Layer" Type="int" />
+          <Property Name="DealerId" Type="uniqueidentifier" />
+          <Property Name="PDealerId" Type="uniqueidentifier" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.ReConsumePrizeRat”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="ReConsumePrizeRat">
+          <Property Name="DealerTypeFlag" Type="int" />
+          <Property Name="DealerType" Type="varchar" MaxLength="10" />
+          <Property Name="RecCount" Type="int" />
+          <Property Name="Level" Type="int" />
+          <Property Name="Rat" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>-->
+        <EntityType Name="RecordPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="int" Nullable="false" />
+          <Property Name="SubDealerRecordPV" Type="int" Nullable="false" />
+          <Property Name="Percentum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LiveAStateCount" Type="int" Nullable="false" />
+          <Property Name="Prize" Type="float" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.SaleCustomerPrizeInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="SaleCustomerPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="SubDealerId" />
+            <PropertyRef Name="AreaRPoint" />
+            <PropertyRef Name="NewPoint" />
+            <PropertyRef Name="AreaName" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AreaRPoint" Type="int" Nullable="false" />
+          <Property Name="NewPoint" Type="int" Nullable="false" />
+          <Property Name="AreaName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IsGrant" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.SalePrizeInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="SalePrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="SubDealerId" />
+            <PropertyRef Name="AreaRPoint" />
+            <PropertyRef Name="NewPoint" />
+            <PropertyRef Name="AreaName" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="varchar" MaxLength="50" />
+          <Property Name="SubDealerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AreaRPoint" Type="int" Nullable="false" />
+          <Property Name="NewPoint" Type="int" Nullable="false" />
+          <Property Name="AreaName" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServerPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalPV" Type="int" Nullable="false" />
+          <Property Name="Percentum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SCType" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.Syn_BusiData_ErrorResult”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Syn_BusiData_ErrorResult">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="BusiDate" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="BusiDate" Type="datetime" Nullable="false" />
+          <Property Name="ErrTag" Type="int" />
+          <Property Name="Discription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.Syn_BusiData_ErrRecord”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Syn_BusiData_ErrRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BusiDate" />
+            <PropertyRef Name="BusiType" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BusiDate" Type="datetime" Nullable="false" />
+          <Property Name="BusiType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Discription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TeachPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="int" Nullable="false" />
+          <Property Name="SubDealerSalePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Percentum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimesSpendPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="int" Nullable="false" />
+          <Property Name="SubDealerReduceTotalPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Percentum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Prize" Type="float" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.User_Balance_Point”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="User_Balance_Point">
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="TPoint_Point" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RPoint_Point" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceNumber" Type="int" />
+          <Property Name="BalanceDate" Type="datetime" />
+          <Property Name="IsGrant" Type="int" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.User_Balance_Point_Recode”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="User_Balance_Point_Recode">
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="TPoint_Point" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RPoint_Point" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceNumber" Type="int" />
+          <Property Name="BalanceDate" Type="datetime" />
+        </EntityType>-->
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.User_DeleteRecord”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="User_DeleteRecord">
+          <Property Name="Id" Type="varchar" MaxLength="50" />
+          <Property Name="DeLevelID" Type="varchar" MaxLength="50" />
+          <Property Name="UserCode" Type="varchar" MaxLength="20" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="UserState" Type="int" />
+          <Property Name="BusiDate" Type="datetime" />
+          <Property Name="BusiType" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+        <EntityType Name="WeekPrize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecomPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="bit" Nullable="false" />
+          <Property Name="GrantDate" Type="datetime" />
+          <Property Name="GrantMarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="DealerDeLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerCode" Type="varchar" MaxLength="15" />
+          <Property Name="HonPrize" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="datetime" />
+          <Property Name="TimesSpendPrize" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.WeekPrize_NumberThreeBak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="WeekPrize_NumberThreeBak">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="RecomPrize" />
+            <PropertyRef Name="SalePrize" />
+            <PropertyRef Name="TeachPrize" />
+            <PropertyRef Name="RecordPrize" />
+            <PropertyRef Name="VipPrize" />
+            <PropertyRef Name="ServicePrize" />
+            <PropertyRef Name="ServiceSurplus" />
+            <PropertyRef Name="RecomServiceFirst" />
+            <PropertyRef Name="RecomServiceSecond" />
+            <PropertyRef Name="ReduceSale" />
+            <PropertyRef Name="ReduceService" />
+            <PropertyRef Name="ReduceIT" />
+            <PropertyRef Name="TotalPrize" />
+            <PropertyRef Name="IsGrant" />
+            <PropertyRef Name="DealerDeLevel" />
+            <PropertyRef Name="DealerHonLevel" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecomPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="bit" Nullable="false" />
+          <Property Name="GrantDate" Type="datetime" />
+          <Property Name="GrantMarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="DealerDeLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerCode" Type="varchar" MaxLength="15" />
+          <Property Name="HonPrize" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="datetime" />
+          <Property Name="TimesSpendPrize" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“BwslRetailRelation.dbo.WeekPrize_QC”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="WeekPrize_QC">
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="RecomPrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="SalePrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="TeachPrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="RecordPrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="VipPrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="ServicePrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="ServiceSurplus" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="RecomServiceFirst" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="RecomServiceSecond" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="HonPrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="ReduceSale" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="ReduceService" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="ReduceIT" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="TotalPrize" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="BusiDate" Type="date" />
+        </EntityType>-->
+        <EntityType Name="WeekPrize_UnActiveDealer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecomPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="bit" Nullable="false" />
+          <Property Name="GrantDate" Type="datetime" />
+          <Property Name="GrantMarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="DealerDeLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerCode" Type="varchar" MaxLength="15" />
+          <Property Name="HonPrize" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="datetime" />
+          <Property Name="TimesSpendPrize" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“BwslRetailRelation.dbo.WeekPrize_UnActiveDealer_BalanceNumberThreeBak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="WeekPrize_UnActiveDealer_BalanceNumberThreeBak">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="RecomPrize" />
+            <PropertyRef Name="SalePrize" />
+            <PropertyRef Name="TeachPrize" />
+            <PropertyRef Name="RecordPrize" />
+            <PropertyRef Name="VipPrize" />
+            <PropertyRef Name="ServicePrize" />
+            <PropertyRef Name="ServiceSurplus" />
+            <PropertyRef Name="RecomServiceFirst" />
+            <PropertyRef Name="RecomServiceSecond" />
+            <PropertyRef Name="ReduceSale" />
+            <PropertyRef Name="ReduceService" />
+            <PropertyRef Name="ReduceIT" />
+            <PropertyRef Name="TotalPrize" />
+            <PropertyRef Name="IsGrant" />
+            <PropertyRef Name="DealerDeLevel" />
+            <PropertyRef Name="DealerHonLevel" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecomPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="bit" Nullable="false" />
+          <Property Name="GrantDate" Type="datetime" />
+          <Property Name="GrantMarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="DealerDeLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DealerCode" Type="varchar" MaxLength="15" />
+          <Property Name="HonPrize" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="datetime" />
+          <Property Name="TimesSpendPrize" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="ZkJDPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BalanceNumber" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="int" Nullable="false" />
+          <Property Name="SubDealerVipPrize" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Percentum" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BwslRetailRelationModelStoreContainer">
+          <EntitySet Name="Balance" EntityType="Self.Balance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DealerPlaceRelation" EntityType="Self.DealerPlaceRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DealerRecomRelation" EntityType="Self.DealerRecomRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlaceRelation" EntityType="Self.PlaceRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecomRelation" EntityType="Self.RecomRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordPrizeInfo" EntityType="Self.RecordPrizeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServerPrizeInfo" EntityType="Self.ServerPrizeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeachPrizeInfo" EntityType="Self.TeachPrizeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimesSpendPrizeInfo" EntityType="Self.TimesSpendPrizeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeekPrize" EntityType="Self.WeekPrize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeekPrize_UnActiveDealer" EntityType="Self.WeekPrize_UnActiveDealer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZkJDPrizeInfo" EntityType="Self.ZkJDPrizeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dealer_Be_Balance_Bak" EntityType="Self.Dealer_Be_Balance_Bak" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Dealer_Be_Balance_Bak].[Id] AS [Id], 
+    [Dealer_Be_Balance_Bak].[Code] AS [Code], 
+    [Dealer_Be_Balance_Bak].[Name] AS [Name], 
+    [Dealer_Be_Balance_Bak].[TPoint_Point] AS [TPoint_Point], 
+    [Dealer_Be_Balance_Bak].[RPoint_Point] AS [RPoint_Point], 
+    [Dealer_Be_Balance_Bak].[AStage_StageCount] AS [AStage_StageCount], 
+    [Dealer_Be_Balance_Bak].[State_LoginState] AS [State_LoginState], 
+    [Dealer_Be_Balance_Bak].[State_MoneyOPState] AS [State_MoneyOPState], 
+    [Dealer_Be_Balance_Bak].[State_AccountState] AS [State_AccountState], 
+    [Dealer_Be_Balance_Bak].[EleMoney_Money] AS [EleMoney_Money], 
+    [Dealer_Be_Balance_Bak].[BonusMoney_Money] AS [BonusMoney_Money], 
+    [Dealer_Be_Balance_Bak].[HonLevelId] AS [HonLevelId], 
+    [Dealer_Be_Balance_Bak].[DeLevelId] AS [DeLevelId], 
+    [Dealer_Be_Balance_Bak].[ReduceMoney_Money] AS [ReduceMoney_Money], 
+    [Dealer_Be_Balance_Bak].[BusiDate] AS [BusiDate], 
+    [Dealer_Be_Balance_Bak].[BalanceNumber] AS [BalanceNumber]
+    FROM [dbo].[Dealer_Be_Balance_Bak] AS [Dealer_Be_Balance_Bak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Grant_BusiData_ErrorResult" EntityType="Self.Grant_BusiData_ErrorResult" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Grant_BusiData_ErrorResult].[Id] AS [Id], 
+    [Grant_BusiData_ErrorResult].[BalanceNumber] AS [BalanceNumber], 
+    [Grant_BusiData_ErrorResult].[BusiDate] AS [BusiDate], 
+    [Grant_BusiData_ErrorResult].[ErrTag] AS [ErrTag], 
+    [Grant_BusiData_ErrorResult].[Discription] AS [Discription]
+    FROM [dbo].[Grant_BusiData_ErrorResult] AS [Grant_BusiData_ErrorResult]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Grant_BusiData_ErrRecord" EntityType="Self.Grant_BusiData_ErrRecord" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Grant_BusiData_ErrRecord].[Id] AS [Id], 
+    [Grant_BusiData_ErrRecord].[BusiDate] AS [BusiDate], 
+    [Grant_BusiData_ErrRecord].[BusiType] AS [BusiType], 
+    [Grant_BusiData_ErrRecord].[Discription] AS [Discription]
+    FROM [dbo].[Grant_BusiData_ErrRecord] AS [Grant_BusiData_ErrRecord]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SaleCustomerPrizeInfo" EntityType="Self.SaleCustomerPrizeInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SaleCustomerPrizeInfo].[Id] AS [Id], 
+    [SaleCustomerPrizeInfo].[BalanceNumber] AS [BalanceNumber], 
+    [SaleCustomerPrizeInfo].[DealerId] AS [DealerId], 
+    [SaleCustomerPrizeInfo].[SubDealerId] AS [SubDealerId], 
+    [SaleCustomerPrizeInfo].[AreaRPoint] AS [AreaRPoint], 
+    [SaleCustomerPrizeInfo].[NewPoint] AS [NewPoint], 
+    [SaleCustomerPrizeInfo].[AreaName] AS [AreaName], 
+    [SaleCustomerPrizeInfo].[IsGrant] AS [IsGrant]
+    FROM [dbo].[SaleCustomerPrizeInfo] AS [SaleCustomerPrizeInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SalePrizeInfo" EntityType="Self.SalePrizeInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SalePrizeInfo].[Id] AS [Id], 
+    [SalePrizeInfo].[BalanceNumber] AS [BalanceNumber], 
+    [SalePrizeInfo].[DealerId] AS [DealerId], 
+    [SalePrizeInfo].[SubDealerId] AS [SubDealerId], 
+    [SalePrizeInfo].[AreaRPoint] AS [AreaRPoint], 
+    [SalePrizeInfo].[NewPoint] AS [NewPoint], 
+    [SalePrizeInfo].[AreaName] AS [AreaName]
+    FROM [dbo].[SalePrizeInfo] AS [SalePrizeInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Syn_BusiData_ErrorResult" EntityType="Self.Syn_BusiData_ErrorResult" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Syn_BusiData_ErrorResult].[Id] AS [Id], 
+    [Syn_BusiData_ErrorResult].[BalanceNumber] AS [BalanceNumber], 
+    [Syn_BusiData_ErrorResult].[BusiDate] AS [BusiDate], 
+    [Syn_BusiData_ErrorResult].[ErrTag] AS [ErrTag], 
+    [Syn_BusiData_ErrorResult].[Discription] AS [Discription]
+    FROM [dbo].[Syn_BusiData_ErrorResult] AS [Syn_BusiData_ErrorResult]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Syn_BusiData_ErrRecord" EntityType="Self.Syn_BusiData_ErrRecord" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Syn_BusiData_ErrRecord].[Id] AS [Id], 
+    [Syn_BusiData_ErrRecord].[BusiDate] AS [BusiDate], 
+    [Syn_BusiData_ErrRecord].[BusiType] AS [BusiType], 
+    [Syn_BusiData_ErrRecord].[Discription] AS [Discription]
+    FROM [dbo].[Syn_BusiData_ErrRecord] AS [Syn_BusiData_ErrRecord]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WeekPrize_NumberThreeBak" EntityType="Self.WeekPrize_NumberThreeBak" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WeekPrize_NumberThreeBak].[Id] AS [Id], 
+    [WeekPrize_NumberThreeBak].[BalanceNumber] AS [BalanceNumber], 
+    [WeekPrize_NumberThreeBak].[DealerId] AS [DealerId], 
+    [WeekPrize_NumberThreeBak].[RecomPrize] AS [RecomPrize], 
+    [WeekPrize_NumberThreeBak].[SalePrize] AS [SalePrize], 
+    [WeekPrize_NumberThreeBak].[TeachPrize] AS [TeachPrize], 
+    [WeekPrize_NumberThreeBak].[RecordPrize] AS [RecordPrize], 
+    [WeekPrize_NumberThreeBak].[VipPrize] AS [VipPrize], 
+    [WeekPrize_NumberThreeBak].[ServicePrize] AS [ServicePrize], 
+    [WeekPrize_NumberThreeBak].[ServiceSurplus] AS [ServiceSurplus], 
+    [WeekPrize_NumberThreeBak].[RecomServiceFirst] AS [RecomServiceFirst], 
+    [WeekPrize_NumberThreeBak].[RecomServiceSecond] AS [RecomServiceSecond], 
+    [WeekPrize_NumberThreeBak].[ReduceSale] AS [ReduceSale], 
+    [WeekPrize_NumberThreeBak].[ReduceService] AS [ReduceService], 
+    [WeekPrize_NumberThreeBak].[ReduceIT] AS [ReduceIT], 
+    [WeekPrize_NumberThreeBak].[TotalPrize] AS [TotalPrize], 
+    [WeekPrize_NumberThreeBak].[IsGrant] AS [IsGrant], 
+    [WeekPrize_NumberThreeBak].[GrantDate] AS [GrantDate], 
+    [WeekPrize_NumberThreeBak].[GrantMarks] AS [GrantMarks], 
+    [WeekPrize_NumberThreeBak].[DealerDeLevel] AS [DealerDeLevel], 
+    [WeekPrize_NumberThreeBak].[DealerHonLevel] AS [DealerHonLevel], 
+    [WeekPrize_NumberThreeBak].[DealerCode] AS [DealerCode], 
+    [WeekPrize_NumberThreeBak].[HonPrize] AS [HonPrize], 
+    [WeekPrize_NumberThreeBak].[BalanceDate] AS [BalanceDate], 
+    [WeekPrize_NumberThreeBak].[TimesSpendPrize] AS [TimesSpendPrize]
+    FROM [dbo].[WeekPrize_NumberThreeBak] AS [WeekPrize_NumberThreeBak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WeekPrize_UnActiveDealer_BalanceNumberThreeBak" EntityType="Self.WeekPrize_UnActiveDealer_BalanceNumberThreeBak" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[Id] AS [Id], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[BalanceNumber] AS [BalanceNumber], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[DealerId] AS [DealerId], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[RecomPrize] AS [RecomPrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[SalePrize] AS [SalePrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[TeachPrize] AS [TeachPrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[RecordPrize] AS [RecordPrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[VipPrize] AS [VipPrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[ServicePrize] AS [ServicePrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[ServiceSurplus] AS [ServiceSurplus], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[RecomServiceFirst] AS [RecomServiceFirst], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[RecomServiceSecond] AS [RecomServiceSecond], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[ReduceSale] AS [ReduceSale], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[ReduceService] AS [ReduceService], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[ReduceIT] AS [ReduceIT], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[TotalPrize] AS [TotalPrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[IsGrant] AS [IsGrant], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[GrantDate] AS [GrantDate], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[GrantMarks] AS [GrantMarks], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[DealerDeLevel] AS [DealerDeLevel], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[DealerHonLevel] AS [DealerHonLevel], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[DealerCode] AS [DealerCode], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[HonPrize] AS [HonPrize], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[BalanceDate] AS [BalanceDate], 
+    [WeekPrize_UnActiveDealer_BalanceNumberThreeBak].[TimesSpendPrize] AS [TimesSpendPrize]
+    FROM [dbo].[WeekPrize_UnActiveDealer_BalanceNumberThreeBak] AS [WeekPrize_UnActiveDealer_BalanceNumberThreeBak]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BwslRetailRelationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Balance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatePerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceType" Type="Int32" Nullable="false" />
+          <Property Name="IsWorking" Type="Boolean" Nullable="false" />
+          <Property Name="TopBalanceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountDate" Type="DateTime" Precision="3" />
+          <Property Name="IsGrant" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DealerPlaceRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="BalanceLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DealerRecomRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="BalanceLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PlaceRelation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Layer" Type="Int32" />
+          <Property Name="DealerId" Type="Guid" />
+          <Property Name="PDealerId" Type="Guid" />
+          <Property Name="AreaName" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecomRelation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Layer" Type="Int32" />
+          <Property Name="DealerId" Type="Guid" />
+          <Property Name="PDealerId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="RecordPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="Int32" Nullable="false" />
+          <Property Name="SubDealerRecordPV" Type="Int32" Nullable="false" />
+          <Property Name="Percentum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="LiveAStateCount" Type="Int32" Nullable="false" />
+          <Property Name="Prize" Type="Double" />
+        </EntityType>
+        <EntityType Name="ServerPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalPV" Type="Int32" Nullable="false" />
+          <Property Name="Percentum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SCType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeachPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="Int32" Nullable="false" />
+          <Property Name="SubDealerSalePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Percentum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimesSpendPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="Int32" Nullable="false" />
+          <Property Name="SubDealerReduceTotalPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Percentum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Prize" Type="Double" />
+        </EntityType>
+        <EntityType Name="WeekPrize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecomPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="Boolean" Nullable="false" />
+          <Property Name="GrantDate" Type="DateTime" Precision="3" />
+          <Property Name="GrantMarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DealerDeLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HonPrize" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="DateTime" Precision="3" />
+          <Property Name="TimesSpendPrize" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="WeekPrize_UnActiveDealer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecomPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="Boolean" Nullable="false" />
+          <Property Name="GrantDate" Type="DateTime" Precision="3" />
+          <Property Name="GrantMarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DealerDeLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HonPrize" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="DateTime" Precision="3" />
+          <Property Name="TimesSpendPrize" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="ZkJDPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubDealerLayer" Type="Int32" Nullable="false" />
+          <Property Name="SubDealerVipPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Percentum" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dealer_Be_Balance_Bak">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="TPoint_Point" />
+            <PropertyRef Name="RPoint_Point" />
+            <PropertyRef Name="AStage_StageCount" />
+            <PropertyRef Name="State_LoginState" />
+            <PropertyRef Name="State_MoneyOPState" />
+            <PropertyRef Name="State_AccountState" />
+            <PropertyRef Name="EleMoney_Money" />
+            <PropertyRef Name="BonusMoney_Money" />
+            <PropertyRef Name="ReduceMoney_Money" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TPoint_Point" Type="Int32" Nullable="false" />
+          <Property Name="RPoint_Point" Type="Int32" Nullable="false" />
+          <Property Name="AStage_StageCount" Type="Int32" Nullable="false" />
+          <Property Name="State_LoginState" Type="Boolean" Nullable="false" />
+          <Property Name="State_MoneyOPState" Type="Boolean" Nullable="false" />
+          <Property Name="State_AccountState" Type="Boolean" Nullable="false" />
+          <Property Name="EleMoney_Money" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="BonusMoney_Money" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="HonLevelId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeLevelId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReduceMoney_Money" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BusiDate" Type="DateTime" Precision="3" />
+          <Property Name="BalanceNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Grant_BusiData_ErrorResult">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="BusiDate" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="BusiDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ErrTag" Type="Int32" />
+          <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Grant_BusiData_ErrRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BusiDate" />
+            <PropertyRef Name="BusiType" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BusiDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BusiType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SaleCustomerPrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="SubDealerId" />
+            <PropertyRef Name="AreaRPoint" />
+            <PropertyRef Name="NewPoint" />
+            <PropertyRef Name="AreaName" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AreaRPoint" Type="Int32" Nullable="false" />
+          <Property Name="NewPoint" Type="Int32" Nullable="false" />
+          <Property Name="AreaName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsGrant" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SalePrizeInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="SubDealerId" />
+            <PropertyRef Name="AreaRPoint" />
+            <PropertyRef Name="NewPoint" />
+            <PropertyRef Name="AreaName" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubDealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AreaRPoint" Type="Int32" Nullable="false" />
+          <Property Name="NewPoint" Type="Int32" Nullable="false" />
+          <Property Name="AreaName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Syn_BusiData_ErrorResult">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="BusiDate" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="BusiDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ErrTag" Type="Int32" />
+          <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Syn_BusiData_ErrRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BusiDate" />
+            <PropertyRef Name="BusiType" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BusiDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BusiType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WeekPrize_NumberThreeBak">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="RecomPrize" />
+            <PropertyRef Name="SalePrize" />
+            <PropertyRef Name="TeachPrize" />
+            <PropertyRef Name="RecordPrize" />
+            <PropertyRef Name="VipPrize" />
+            <PropertyRef Name="ServicePrize" />
+            <PropertyRef Name="ServiceSurplus" />
+            <PropertyRef Name="RecomServiceFirst" />
+            <PropertyRef Name="RecomServiceSecond" />
+            <PropertyRef Name="ReduceSale" />
+            <PropertyRef Name="ReduceService" />
+            <PropertyRef Name="ReduceIT" />
+            <PropertyRef Name="TotalPrize" />
+            <PropertyRef Name="IsGrant" />
+            <PropertyRef Name="DealerDeLevel" />
+            <PropertyRef Name="DealerHonLevel" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecomPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="Boolean" Nullable="false" />
+          <Property Name="GrantDate" Type="DateTime" Precision="3" />
+          <Property Name="GrantMarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DealerDeLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HonPrize" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="DateTime" Precision="3" />
+          <Property Name="TimesSpendPrize" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="WeekPrize_UnActiveDealer_BalanceNumberThreeBak">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="BalanceNumber" />
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="RecomPrize" />
+            <PropertyRef Name="SalePrize" />
+            <PropertyRef Name="TeachPrize" />
+            <PropertyRef Name="RecordPrize" />
+            <PropertyRef Name="VipPrize" />
+            <PropertyRef Name="ServicePrize" />
+            <PropertyRef Name="ServiceSurplus" />
+            <PropertyRef Name="RecomServiceFirst" />
+            <PropertyRef Name="RecomServiceSecond" />
+            <PropertyRef Name="ReduceSale" />
+            <PropertyRef Name="ReduceService" />
+            <PropertyRef Name="ReduceIT" />
+            <PropertyRef Name="TotalPrize" />
+            <PropertyRef Name="IsGrant" />
+            <PropertyRef Name="DealerDeLevel" />
+            <PropertyRef Name="DealerHonLevel" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BalanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="DealerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecomPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TeachPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VipPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServicePrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ServiceSurplus" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceFirst" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecomServiceSecond" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceSale" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceService" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ReduceIT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TotalPrize" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsGrant" Type="Boolean" Nullable="false" />
+          <Property Name="GrantDate" Type="DateTime" Precision="3" />
+          <Property Name="GrantMarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DealerDeLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerHonLevel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealerCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HonPrize" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BalanceDate" Type="DateTime" Precision="3" />
+          <Property Name="TimesSpendPrize" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="BwslRetailRelationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Balance" EntityType="Self.Balance" />
+          <EntitySet Name="DealerPlaceRelation" EntityType="Self.DealerPlaceRelation" />
+          <EntitySet Name="DealerRecomRelation" EntityType="Self.DealerRecomRelation" />
+          <EntitySet Name="PlaceRelation" EntityType="Self.PlaceRelation" />
+          <EntitySet Name="RecomRelation" EntityType="Self.RecomRelation" />
+          <EntitySet Name="RecordPrizeInfo" EntityType="Self.RecordPrizeInfo" />
+          <EntitySet Name="ServerPrizeInfo" EntityType="Self.ServerPrizeInfo" />
+          <EntitySet Name="TeachPrizeInfo" EntityType="Self.TeachPrizeInfo" />
+          <EntitySet Name="TimesSpendPrizeInfo" EntityType="Self.TimesSpendPrizeInfo" />
+          <EntitySet Name="WeekPrize" EntityType="Self.WeekPrize" />
+          <EntitySet Name="WeekPrize_UnActiveDealer" EntityType="Self.WeekPrize_UnActiveDealer" />
+          <EntitySet Name="ZkJDPrizeInfo" EntityType="Self.ZkJDPrizeInfo" />
+          <EntitySet Name="Dealer_Be_Balance_Bak" EntityType="Self.Dealer_Be_Balance_Bak" />
+          <EntitySet Name="Grant_BusiData_ErrorResult" EntityType="Self.Grant_BusiData_ErrorResult" />
+          <EntitySet Name="Grant_BusiData_ErrRecord" EntityType="Self.Grant_BusiData_ErrRecord" />
+          <EntitySet Name="SaleCustomerPrizeInfo" EntityType="Self.SaleCustomerPrizeInfo" />
+          <EntitySet Name="SalePrizeInfo" EntityType="Self.SalePrizeInfo" />
+          <EntitySet Name="Syn_BusiData_ErrorResult" EntityType="Self.Syn_BusiData_ErrorResult" />
+          <EntitySet Name="Syn_BusiData_ErrRecord" EntityType="Self.Syn_BusiData_ErrRecord" />
+          <EntitySet Name="WeekPrize_NumberThreeBak" EntityType="Self.WeekPrize_NumberThreeBak" />
+          <EntitySet Name="WeekPrize_UnActiveDealer_BalanceNumberThreeBak" EntityType="Self.WeekPrize_UnActiveDealer_BalanceNumberThreeBak" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BwslRetailRelationModelStoreContainer" CdmEntityContainer="BwslRetailRelationEntities">
+          <EntitySetMapping Name="Balance">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.Balance">
+              <MappingFragment StoreEntitySet="Balance">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatePerson" ColumnName="CreatePerson" />
+                <ScalarProperty Name="BalanceType" ColumnName="BalanceType" />
+                <ScalarProperty Name="IsWorking" ColumnName="IsWorking" />
+                <ScalarProperty Name="TopBalanceNumber" ColumnName="TopBalanceNumber" />
+                <ScalarProperty Name="CountDate" ColumnName="CountDate" />
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealerPlaceRelation">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.DealerPlaceRelation">
+              <MappingFragment StoreEntitySet="DealerPlaceRelation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="PDealerId" ColumnName="PDealerId" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="BalanceLevel" ColumnName="BalanceLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealerRecomRelation">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.DealerRecomRelation">
+              <MappingFragment StoreEntitySet="DealerRecomRelation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="PDealerId" ColumnName="PDealerId" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="BalanceLevel" ColumnName="BalanceLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlaceRelation">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.PlaceRelation">
+              <MappingFragment StoreEntitySet="PlaceRelation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="PDealerId" ColumnName="PDealerId" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecomRelation">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.RecomRelation">
+              <MappingFragment StoreEntitySet="RecomRelation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="PDealerId" ColumnName="PDealerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordPrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.RecordPrizeInfo">
+              <MappingFragment StoreEntitySet="RecordPrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="SubDealerLayer" ColumnName="SubDealerLayer" />
+                <ScalarProperty Name="SubDealerRecordPV" ColumnName="SubDealerRecordPV" />
+                <ScalarProperty Name="Percentum" ColumnName="Percentum" />
+                <ScalarProperty Name="LiveAStateCount" ColumnName="LiveAStateCount" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServerPrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.ServerPrizeInfo">
+              <MappingFragment StoreEntitySet="ServerPrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="TotalPV" ColumnName="TotalPV" />
+                <ScalarProperty Name="Percentum" ColumnName="Percentum" />
+                <ScalarProperty Name="SCType" ColumnName="SCType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeachPrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.TeachPrizeInfo">
+              <MappingFragment StoreEntitySet="TeachPrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="SubDealerLayer" ColumnName="SubDealerLayer" />
+                <ScalarProperty Name="SubDealerSalePrize" ColumnName="SubDealerSalePrize" />
+                <ScalarProperty Name="Percentum" ColumnName="Percentum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimesSpendPrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.TimesSpendPrizeInfo">
+              <MappingFragment StoreEntitySet="TimesSpendPrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="SubDealerLayer" ColumnName="SubDealerLayer" />
+                <ScalarProperty Name="SubDealerReduceTotalPrize" ColumnName="SubDealerReduceTotalPrize" />
+                <ScalarProperty Name="Percentum" ColumnName="Percentum" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeekPrize">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.WeekPrize">
+              <MappingFragment StoreEntitySet="WeekPrize">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="RecomPrize" ColumnName="RecomPrize" />
+                <ScalarProperty Name="SalePrize" ColumnName="SalePrize" />
+                <ScalarProperty Name="TeachPrize" ColumnName="TeachPrize" />
+                <ScalarProperty Name="RecordPrize" ColumnName="RecordPrize" />
+                <ScalarProperty Name="VipPrize" ColumnName="VipPrize" />
+                <ScalarProperty Name="ServicePrize" ColumnName="ServicePrize" />
+                <ScalarProperty Name="ServiceSurplus" ColumnName="ServiceSurplus" />
+                <ScalarProperty Name="RecomServiceFirst" ColumnName="RecomServiceFirst" />
+                <ScalarProperty Name="RecomServiceSecond" ColumnName="RecomServiceSecond" />
+                <ScalarProperty Name="ReduceSale" ColumnName="ReduceSale" />
+                <ScalarProperty Name="ReduceService" ColumnName="ReduceService" />
+                <ScalarProperty Name="ReduceIT" ColumnName="ReduceIT" />
+                <ScalarProperty Name="TotalPrize" ColumnName="TotalPrize" />
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+                <ScalarProperty Name="GrantDate" ColumnName="GrantDate" />
+                <ScalarProperty Name="GrantMarks" ColumnName="GrantMarks" />
+                <ScalarProperty Name="DealerDeLevel" ColumnName="DealerDeLevel" />
+                <ScalarProperty Name="DealerHonLevel" ColumnName="DealerHonLevel" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="HonPrize" ColumnName="HonPrize" />
+                <ScalarProperty Name="BalanceDate" ColumnName="BalanceDate" />
+                <ScalarProperty Name="TimesSpendPrize" ColumnName="TimesSpendPrize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeekPrize_UnActiveDealer">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.WeekPrize_UnActiveDealer">
+              <MappingFragment StoreEntitySet="WeekPrize_UnActiveDealer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="RecomPrize" ColumnName="RecomPrize" />
+                <ScalarProperty Name="SalePrize" ColumnName="SalePrize" />
+                <ScalarProperty Name="TeachPrize" ColumnName="TeachPrize" />
+                <ScalarProperty Name="RecordPrize" ColumnName="RecordPrize" />
+                <ScalarProperty Name="VipPrize" ColumnName="VipPrize" />
+                <ScalarProperty Name="ServicePrize" ColumnName="ServicePrize" />
+                <ScalarProperty Name="ServiceSurplus" ColumnName="ServiceSurplus" />
+                <ScalarProperty Name="RecomServiceFirst" ColumnName="RecomServiceFirst" />
+                <ScalarProperty Name="RecomServiceSecond" ColumnName="RecomServiceSecond" />
+                <ScalarProperty Name="ReduceSale" ColumnName="ReduceSale" />
+                <ScalarProperty Name="ReduceService" ColumnName="ReduceService" />
+                <ScalarProperty Name="ReduceIT" ColumnName="ReduceIT" />
+                <ScalarProperty Name="TotalPrize" ColumnName="TotalPrize" />
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+                <ScalarProperty Name="GrantDate" ColumnName="GrantDate" />
+                <ScalarProperty Name="GrantMarks" ColumnName="GrantMarks" />
+                <ScalarProperty Name="DealerDeLevel" ColumnName="DealerDeLevel" />
+                <ScalarProperty Name="DealerHonLevel" ColumnName="DealerHonLevel" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="HonPrize" ColumnName="HonPrize" />
+                <ScalarProperty Name="BalanceDate" ColumnName="BalanceDate" />
+                <ScalarProperty Name="TimesSpendPrize" ColumnName="TimesSpendPrize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZkJDPrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.ZkJDPrizeInfo">
+              <MappingFragment StoreEntitySet="ZkJDPrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="SubDealerLayer" ColumnName="SubDealerLayer" />
+                <ScalarProperty Name="SubDealerVipPrize" ColumnName="SubDealerVipPrize" />
+                <ScalarProperty Name="Percentum" ColumnName="Percentum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dealer_Be_Balance_Bak">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.Dealer_Be_Balance_Bak">
+              <MappingFragment StoreEntitySet="Dealer_Be_Balance_Bak">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TPoint_Point" ColumnName="TPoint_Point" />
+                <ScalarProperty Name="RPoint_Point" ColumnName="RPoint_Point" />
+                <ScalarProperty Name="AStage_StageCount" ColumnName="AStage_StageCount" />
+                <ScalarProperty Name="State_LoginState" ColumnName="State_LoginState" />
+                <ScalarProperty Name="State_MoneyOPState" ColumnName="State_MoneyOPState" />
+                <ScalarProperty Name="State_AccountState" ColumnName="State_AccountState" />
+                <ScalarProperty Name="EleMoney_Money" ColumnName="EleMoney_Money" />
+                <ScalarProperty Name="BonusMoney_Money" ColumnName="BonusMoney_Money" />
+                <ScalarProperty Name="HonLevelId" ColumnName="HonLevelId" />
+                <ScalarProperty Name="DeLevelId" ColumnName="DeLevelId" />
+                <ScalarProperty Name="ReduceMoney_Money" ColumnName="ReduceMoney_Money" />
+                <ScalarProperty Name="BusiDate" ColumnName="BusiDate" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grant_BusiData_ErrorResult">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.Grant_BusiData_ErrorResult">
+              <MappingFragment StoreEntitySet="Grant_BusiData_ErrorResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="BusiDate" ColumnName="BusiDate" />
+                <ScalarProperty Name="ErrTag" ColumnName="ErrTag" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grant_BusiData_ErrRecord">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.Grant_BusiData_ErrRecord">
+              <MappingFragment StoreEntitySet="Grant_BusiData_ErrRecord">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BusiDate" ColumnName="BusiDate" />
+                <ScalarProperty Name="BusiType" ColumnName="BusiType" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleCustomerPrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.SaleCustomerPrizeInfo">
+              <MappingFragment StoreEntitySet="SaleCustomerPrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="AreaRPoint" ColumnName="AreaRPoint" />
+                <ScalarProperty Name="NewPoint" ColumnName="NewPoint" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalePrizeInfo">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.SalePrizeInfo">
+              <MappingFragment StoreEntitySet="SalePrizeInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="SubDealerId" ColumnName="SubDealerId" />
+                <ScalarProperty Name="AreaRPoint" ColumnName="AreaRPoint" />
+                <ScalarProperty Name="NewPoint" ColumnName="NewPoint" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Syn_BusiData_ErrorResult">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.Syn_BusiData_ErrorResult">
+              <MappingFragment StoreEntitySet="Syn_BusiData_ErrorResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="BusiDate" ColumnName="BusiDate" />
+                <ScalarProperty Name="ErrTag" ColumnName="ErrTag" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Syn_BusiData_ErrRecord">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.Syn_BusiData_ErrRecord">
+              <MappingFragment StoreEntitySet="Syn_BusiData_ErrRecord">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BusiDate" ColumnName="BusiDate" />
+                <ScalarProperty Name="BusiType" ColumnName="BusiType" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeekPrize_NumberThreeBak">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.WeekPrize_NumberThreeBak">
+              <MappingFragment StoreEntitySet="WeekPrize_NumberThreeBak">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="RecomPrize" ColumnName="RecomPrize" />
+                <ScalarProperty Name="SalePrize" ColumnName="SalePrize" />
+                <ScalarProperty Name="TeachPrize" ColumnName="TeachPrize" />
+                <ScalarProperty Name="RecordPrize" ColumnName="RecordPrize" />
+                <ScalarProperty Name="VipPrize" ColumnName="VipPrize" />
+                <ScalarProperty Name="ServicePrize" ColumnName="ServicePrize" />
+                <ScalarProperty Name="ServiceSurplus" ColumnName="ServiceSurplus" />
+                <ScalarProperty Name="RecomServiceFirst" ColumnName="RecomServiceFirst" />
+                <ScalarProperty Name="RecomServiceSecond" ColumnName="RecomServiceSecond" />
+                <ScalarProperty Name="ReduceSale" ColumnName="ReduceSale" />
+                <ScalarProperty Name="ReduceService" ColumnName="ReduceService" />
+                <ScalarProperty Name="ReduceIT" ColumnName="ReduceIT" />
+                <ScalarProperty Name="TotalPrize" ColumnName="TotalPrize" />
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+                <ScalarProperty Name="GrantDate" ColumnName="GrantDate" />
+                <ScalarProperty Name="GrantMarks" ColumnName="GrantMarks" />
+                <ScalarProperty Name="DealerDeLevel" ColumnName="DealerDeLevel" />
+                <ScalarProperty Name="DealerHonLevel" ColumnName="DealerHonLevel" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="HonPrize" ColumnName="HonPrize" />
+                <ScalarProperty Name="BalanceDate" ColumnName="BalanceDate" />
+                <ScalarProperty Name="TimesSpendPrize" ColumnName="TimesSpendPrize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeekPrize_UnActiveDealer_BalanceNumberThreeBak">
+            <EntityTypeMapping TypeName="BwslRetailRelationModel.WeekPrize_UnActiveDealer_BalanceNumberThreeBak">
+              <MappingFragment StoreEntitySet="WeekPrize_UnActiveDealer_BalanceNumberThreeBak">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BalanceNumber" ColumnName="BalanceNumber" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="RecomPrize" ColumnName="RecomPrize" />
+                <ScalarProperty Name="SalePrize" ColumnName="SalePrize" />
+                <ScalarProperty Name="TeachPrize" ColumnName="TeachPrize" />
+                <ScalarProperty Name="RecordPrize" ColumnName="RecordPrize" />
+                <ScalarProperty Name="VipPrize" ColumnName="VipPrize" />
+                <ScalarProperty Name="ServicePrize" ColumnName="ServicePrize" />
+                <ScalarProperty Name="ServiceSurplus" ColumnName="ServiceSurplus" />
+                <ScalarProperty Name="RecomServiceFirst" ColumnName="RecomServiceFirst" />
+                <ScalarProperty Name="RecomServiceSecond" ColumnName="RecomServiceSecond" />
+                <ScalarProperty Name="ReduceSale" ColumnName="ReduceSale" />
+                <ScalarProperty Name="ReduceService" ColumnName="ReduceService" />
+                <ScalarProperty Name="ReduceIT" ColumnName="ReduceIT" />
+                <ScalarProperty Name="TotalPrize" ColumnName="TotalPrize" />
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+                <ScalarProperty Name="GrantDate" ColumnName="GrantDate" />
+                <ScalarProperty Name="GrantMarks" ColumnName="GrantMarks" />
+                <ScalarProperty Name="DealerDeLevel" ColumnName="DealerDeLevel" />
+                <ScalarProperty Name="DealerHonLevel" ColumnName="DealerHonLevel" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="HonPrize" ColumnName="HonPrize" />
+                <ScalarProperty Name="BalanceDate" ColumnName="BalanceDate" />
+                <ScalarProperty Name="TimesSpendPrize" ColumnName="TimesSpendPrize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+
+    <!--订单支付查询Job-->
+    <job>
+      <name>OrderPayQueryJob</name>
+      <group>OrderPayQuery</group>
+      <description>订单支付查询Job</description>
+      <job-type>NewMK.Domian.Task.Job.OrderPayQueryJob,NewMK.Domian</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>OrderPayQueryJobTrigger</name>
+        <group>OrderPayQuery</group>
+        <job-name>OrderPayQueryJob</job-name>
+        <job-group>OrderPayQuery</job-group>
+        <start-time>2017-06-20T00:00:00+08:00</start-time>
+        <cron-expression>0/2 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <!--订单退款查询Job-->
+    <job>
+      <name>OrderRefundQueryJob</name>
+      <group>OrderRefundQuery</group>
+      <description>订单退款查询Job</description>
+      <job-type>NewMK.Domian.Task.Job.OrderRefundQueryJob,NewMK.Domian</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>OrderRefundQueryJobTrigger</name>
+        <group>OrderRefundQuery</group>
+        <job-name>OrderRefundQueryJob</job-name>
+        <job-group>OrderRefundQuery</job-group>
+        <start-time>2017-06-20T00:00:00+08:00</start-time>
+        <cron-expression>0/2 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+
+    <!--订单安置Job-->
+    <job>
+      <name>OrderBalanceAccountJob</name>
+      <group>OrderBalanceAccount</group>
+      <description>订单安置Job</description>
+      <job-type>NewMK.Domian.Task.Job.OrderBalanceAccountJob,NewMK.Domian</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>OrderBalanceAccountJobTrigger</name>
+        <group>OrderBalanceAccount</group>
+        <job-name>OrderBalanceAccountJob</job-name>
+        <job-group>OrderBalanceAccount</job-group>
+        <start-time>2017-06-20T00:00:00+08:00</start-time>
+        <cron-expression>0/2 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+  </schedule>
+</job-scheduling-data>
